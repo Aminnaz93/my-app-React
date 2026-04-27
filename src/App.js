@@ -1,7 +1,11 @@
 import './App.css';
 import Person from './components/Person';
+import MyComponent from './components/MyComponent';
 
 function App() {
+
+
+  
   const people = [
     { name: "Amin", age: 30 },
     { name: "Bob", age: 33 }
@@ -12,7 +16,11 @@ function App() {
   }
 
   return (
+    
     <div className="App">
+      <MyComponent></MyComponent>
+
+
       <h1>Lista över personer</h1>
 
       {people.map((person) => (
