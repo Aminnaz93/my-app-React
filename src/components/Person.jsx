@@ -14,11 +14,17 @@
 
 import React from 'react';
 
-function Person({ name, age }) {
+function Person({ name, age, onRemove }) {
+
+  function handleRemove() {
+    onRemove(name);
+  }
+
   return (
     <div>
       <h2>Namn: {name}</h2>
       <p>Ålder: {age}</p>
+      <button onClick={handleRemove}>Ta bort personen</button>
     </div>
   );
 }

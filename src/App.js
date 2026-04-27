@@ -1,22 +1,15 @@
 import './App.css';
-import Greeting from './components/Greeting';
 import Person from './components/Person';
 
-
 function App() {
-  //parent "äger datan"
   const people = [
     { name: "Amin", age: 30 },
     { name: "Bob", age: 33 }
   ];
 
-  //deklarera en funktion som kan användas av child
-
-  function removePerson(name){
-    //logik för att ta bort en person
-    console.log("ta bort person:" + name);
+  function removePerson(name) {
+    console.log("Ta bort person: " + name);
   }
-
 
   return (
     <div className="App">
@@ -30,8 +23,6 @@ function App() {
           onRemove={removePerson}
         />
       ))}
-
-  
     </div>
   );
 }
