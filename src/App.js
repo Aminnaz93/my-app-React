@@ -1,28 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import Greeting from './components/Greeting';
+import Person from './components/Person';
+
 
 function App() {
+  //parent "äger datan"
+  const people = [
+    { name: "Amin", age: 30 },
+    { name: "Bob", age: 33 }
+  ];
+
+  //deklarera en funktion som kan användas av child
+
+  function removePerson(name){
+    //logik för att ta bort en person
+    console.log("ta bort person:" + name);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Lista över personer</h1>
+
+      {people.map((person) => (
+        <Person
+          key={person.name}
+          name={person.name}
+          age={person.age}
+          onRemove={removePerson}
+        />
+      ))}
+
+  
     </div>
   );
 }
 
 export default App;
+
+
+// parent skickar ner data till child via props 
+// parent --> child
+// app.js --> greeting, person.jsx
+
+// skicka funktioner som child kan använda
 
 
 // useState
