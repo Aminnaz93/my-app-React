@@ -5,12 +5,15 @@ import Counter from './components/Counter';
 import UseEffectEX from './components/UseEffectEx';
 import DependencyArray from './components/DependencyArray';
 import MyForm from './components/MyForm';
+import Todos from './components/Todos';
+
 
 function App() {
   return (
     <div className="App">
-      <MyForm/>
-
+      {/* <MyForm/>
+      <Function/> */}
+      <Todos/>
     </div>
   );
 }
